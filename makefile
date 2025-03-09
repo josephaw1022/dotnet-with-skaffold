@@ -1,19 +1,12 @@
-
 .DEFAULT_GOAL := help
-
 
 
 .PHONY: help setup-env kind-cluster-create kind-cluster-delete build dev clean
 
 
-
-
 help: ## Display this help message.
 	@echo "Available tasks:"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## ' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-25s %s\n", $$1, $$2}'
-
-
-
 
 
 setup-env: ## Set up the development environment.
