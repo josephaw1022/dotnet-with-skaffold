@@ -3,7 +3,7 @@
 
 
 
-.PHONY: help setup-env kind-cluster-create kind-cluster-delete
+.PHONY: help setup-env kind-cluster-create kind-cluster-delete build dev clean
 
 
 
