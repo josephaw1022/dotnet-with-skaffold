@@ -1,7 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dotnet-with-skaffold
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-api
+  namespace: dotnet-with-skaffold
 spec:
   replicas: 1
   selector:
@@ -14,6 +21,6 @@ spec:
     spec:
       containers:
       - name: web-api
-        image: "localhost:5001/dotnet-with-skaffold-web-api"
+        image: "localhost:5000/dotnet-with-skaffold-web-api:latest"
         ports:
         - containerPort: 8080

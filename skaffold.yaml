@@ -3,8 +3,13 @@ kind: Config
 metadata:
   name: web-api
 build:
+  insecureRegistries:
+    - localhost:5000
+  tagPolicy:
+    sha256: {}
+
   artifacts:
-    - image: localhost:5001/dotnet-with-skaffold-web-api
+    - image: "localhost:5000/dotnet-with-skaffold-web-api"
       custom:
         buildCommand: |
           dotnet publish web-api /t:PublishContainer 
@@ -14,7 +19,8 @@ manifests:
     - k8s/web-api.yaml
 
 portForward:
-  - resourceType: Deployment
+  - resourceType: deployment
+    namespace: dotnet-with-skaffold
     resourceName: web-api
     port: 8080
     localPort: 8085

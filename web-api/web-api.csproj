@@ -10,7 +10,7 @@
   <PropertyGroup>
     <ContainerRepository>dotnet-with-skaffold-web-api</ContainerRepository>
     <ContainerImageTag>latest</ContainerImageTag>
-    <ContainerRegistry>localhost:5001</ContainerRegistry>
+    <ContainerRegistry>localhost:5000</ContainerRegistry>
   </PropertyGroup>
 
   <ItemGroup>

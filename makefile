@@ -13,14 +13,14 @@ setup-env: ## Set up the development environment.
 	@echo "Setting up environment..."
 	@echo "Must have dotnet, kind, skaffold, and kubectl installed."
 
-	@echo "Setting executable permissions on local bin..."
+	@echo "Setting executable permissions on local scripts..."
 	@chmod +x scripts/*
 
 
 
 kind-cluster-create: ## Create a kind cluster.
 	@echo "Creating kind cluster..."
-	@scripts/kind-cluster-create.sh
+	@bash ./scripts/kind-cluster-create.sh
 
 
 kind-cluster-delete: ## Delete the kind cluster.
